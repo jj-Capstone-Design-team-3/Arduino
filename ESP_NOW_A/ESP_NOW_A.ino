@@ -24,9 +24,9 @@ void OnDataRecv(const uint8_t *mac_addr, const uint8_t *data, int len) {
   memcpy(&droneSensor, data, sizeof(DroneSensor));
   Serial.print("Received sensor >> [");
   Serial.print("Received data: ");
-  for (int i = 0; i < 6; i++) {
+  for (int i = 0; i < 4; i++) {
     Serial.print(droneSensor.motor[i]);
-    if (i < 5) Serial.print(", ");
+    if (i < 3) Serial.print(", ");
     else Serial.print("]");
   }
   Serial.println();
