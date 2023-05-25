@@ -132,19 +132,6 @@ void loop() {
     }
   }
   for(int i=0;i<8;i++){
-    if(ppm[i]!=oldppm[i]){
-      oldppm[i]=ppm[i];
-      uint8_t sendframe[3];
-      sendframe[0]=i;
-      sendframe[1]=ppm[i]>>8;
-      sendframe[2]=ppm[i];
-      if (webSocket.isConnected()) {
-        webSocket.sendBIN(sendframe, 3);
-        Serial.println("success");
-      }
-    }
-  }
-  for(int i=0;i<8;i++){
     oldppm[i]=ppm[i];
     uint8_t sendframe[3];
     sendframe[0]=i;
